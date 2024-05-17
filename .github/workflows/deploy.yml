@@ -24,3 +24,10 @@ jobs:
               with:
                   push: true
                   tags: typescriptlover/coursepage:latest
+
+    deploy:
+        name: Deploy to Render
+        runs-on: ubuntu-latest
+        steps:
+            - name: Trigger deployment
+              run: curl ${{ secrets.RENDER_DEPLOY_URL }}
